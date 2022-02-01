@@ -1,0 +1,43 @@
+$font-size: 10px;
+$main-font: 'Share Tech Mono', monospace;
+$display-font: monospace;
+$border-radius: 4px;
+$background-base: hsl(240, 20%, 80%);
+$number-color: hsl(0, 0%, 30%);
+$operator-color: hsl(0, 0%, 40%);
+$equal-color: hsl(200, 100%, 20%);
+$clear-color: hsl(0, 50%, 45%);
+$delete-color: hsl(0, 50%, 40%);
+
+:root {
+  --font-size: #{$font-size};
+  --main-font: #{$main-font};
+  --display-font: #{$display-font};
+  --border-radius: #{$border-radius};
+  --background-base: #{$background-base};
+  --number-color: #{$number-color};
+  --operator-color: #{$operator-color};
+  --equal-color: #{$equal-color};
+  --clear-color: #{$clear-color};
+  --delete-color: #{$delete-color};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+
+  // @media screen and (max-width: 1200px) {
+  //   font-size: 60%;
+  // }
+
+  // @media screen and (max-width: 980px) {
+  //   font-size: 58%;
+  // }
+
+  // @media screen and (max-width: 480px) {
+  //   font-size: 55%;
+  // }
+}

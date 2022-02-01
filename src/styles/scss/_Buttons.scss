@@ -1,0 +1,43 @@
+.button-container {
+  button {
+    font: 2rem var(--main-font);
+    width: 8rem;
+    height: 7rem;
+    border: 1px solid black;
+    color: white;
+    transition: 100ms;
+
+    &:nth-child(2) {
+      font-size: 3rem;
+      padding-bottom: 9px;
+    }
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  .span-two {
+    width: 16rem;
+  }
+
+  .number {
+    background-color: var(--number-color);
+  }
+
+  .operator {
+    background-color: var(--operator-color);
+  }
+
+  .equal {
+    background-color: var(--equal-color);
+  }
+
+  .clear {
+    background-color: var(--clear-color);
+  }
+
+  .delete {
+    background-color: var(--delete-color);
+  }
+}

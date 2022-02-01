@@ -1,0 +1,19 @@
+body {
+  font: normal 1.6rem;
+  margin: 0;
+  background-color: var(--background-base);
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.calculator-container {
+  width: 33rem;
+  background: black;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}

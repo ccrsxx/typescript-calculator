@@ -1,0 +1,23 @@
+.display-container {
+  font-family: var(--display-font);
+  display: flex;
+  min-height: 6rem;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 0.5rem;
+  padding-top: 0;
+
+  .formula {
+    word-wrap: break-word;
+    word-break: break-all;
+    color: orange;
+    font-size: 2rem;
+    min-height: 3rem;
+  }
+
+  .current {
+    @extend .formula;
+    font-size: 2.5rem;
+    color: white;
+  }
+}
