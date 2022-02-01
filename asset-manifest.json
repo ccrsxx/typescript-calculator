@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/typescript-calculator/static/css/main.697dfb9b.css",
+    "main.js": "/typescript-calculator/static/js/main.ef939df4.js",
+    "index.html": "/typescript-calculator/index.html",
+    "main.697dfb9b.css.map": "/typescript-calculator/static/css/main.697dfb9b.css.map",
+    "main.ef939df4.js.map": "/typescript-calculator/static/js/main.ef939df4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.697dfb9b.css",
+    "static/js/main.ef939df4.js"
+  ]
+}
