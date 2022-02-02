@@ -55,7 +55,7 @@ export const Buttons = (props: ButtonProps) => (
       9
     </button>
     <button
-      id='substract'
+      id='subtract'
       className='operator'
       onClick={() => props.onClick('-')}
     >
@@ -68,8 +68,8 @@ export const Buttons = (props: ButtonProps) => (
       0
     </button>
     <button
-      id='equal'
-      className='equal span-two'
+      id='equals'
+      className='equals span-two'
       onClick={() => props.onClick('=')}
     >
       =

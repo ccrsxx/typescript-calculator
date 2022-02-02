@@ -9,7 +9,7 @@ export const Display = (props: DisplayProps) => (
     <div className='formula'>{props.formula}</div>
     <div
       id='display'
-      className='current'
+      className={`current ${props.doneCalculating ? 'bounce' : ''}`}
       style={props.doneCalculating ? { color: 'lightgreen' } : {}}
     >
       {props.current}
