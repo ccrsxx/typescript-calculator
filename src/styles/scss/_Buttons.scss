@@ -7,13 +7,14 @@
     color: white;
     transition: 100ms;
 
-    &:nth-child(2) {
-      font-size: 3rem;
-      padding-bottom: 9px;
+    &:hover {
+      filter: brightness(1.1);
+      border-color: lightgray;
+      color: black;
     }
 
-    &:hover {
-      filter: brightness(1.2);
+    &:active {
+      filter: brightness(0.8);
     }
   }
 

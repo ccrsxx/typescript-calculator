@@ -11,8 +11,8 @@ export const Buttons = (props: ButtonProps) => (
     >
       AC
     </button>
-    <button id='delete' className='delete' onClick={() => props.onClick('←')}>
-      ←
+    <button id='delete' className='delete' onClick={() => props.onClick('DEL')}>
+      DEL
     </button>
     <button id='divide' className='operator' onClick={() => props.onClick('/')}>
       /
