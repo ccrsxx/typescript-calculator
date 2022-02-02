@@ -55,7 +55,7 @@ class App extends Component<{}, AppStates> {
 
     // remove everything except dot and numbers
     // this prevent operators from being added after selecting a operator
-    if (/[^\.\d]/.test(this.state.current)) {
+    if (/[^.\d]/.test(this.state.current)) {
       this.setState((state) => ({
         current: state.current.slice(1)
       }));
@@ -114,7 +114,7 @@ class App extends Component<{}, AppStates> {
       return;
 
     if (formula) {
-      const sanitizedFormula = formula.replace(/[^\d+-/\*]/g, '');
+      const sanitizedFormula = formula.replace(/[^\d+-/*]/g, '');
       const result = eval(sanitizedFormula).toString();
       this.setState({
         current: result,
@@ -142,11 +142,11 @@ class App extends Component<{}, AppStates> {
 
     // adds a zero after zero decimal points
     [parsedFormula, parsedCurrent] = [parsedFormula, parsedCurrent].map(
-      (nums) => nums.replace(/^\.|([+-/\*])\./g, '$10.')
+      (nums) => nums.replace(/^\.|([+-/*])\./g, '$10.')
     );
 
     // adds a space between each operator in the formula
-    parsedFormula = parsedFormula.replace(/([+\-\/*])/g, ' $1 ');
+    parsedFormula = parsedFormula.replace(/([+\-/*])/g, ' $1 ');
 
     return (
       <div className='App'>
