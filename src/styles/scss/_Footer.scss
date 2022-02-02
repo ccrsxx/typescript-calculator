@@ -1,0 +1,28 @@
+.author-container {
+  animation: fadeIn 0.5s ease-in 1s forwards;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  opacity: 0;
+
+  .subtitle {
+    margin-bottom: 0.5rem;
+  }
+
+  .author-name {
+    text-decoration: none;
+    color: darkblue;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

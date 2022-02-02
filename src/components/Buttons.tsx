@@ -3,7 +3,7 @@ interface ButtonProps {
 }
 
 export const Buttons = (props: ButtonProps) => (
-  <div className='button-container'>
+  <section className='button-container'>
     <button
       id='clear'
       className='clear span-two'
@@ -74,5 +74,5 @@ export const Buttons = (props: ButtonProps) => (
     >
       =
     </button>
-  </div>
+  </section>
 );

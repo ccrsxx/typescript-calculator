@@ -5,16 +5,18 @@
     height: 7rem;
     border: 1px solid black;
     color: white;
-    transition: 100ms;
+    transition: 150ms;
 
     &:hover {
       filter: brightness(1.1);
       border-color: lightgray;
       color: black;
+      transform: scale(1.01);
     }
 
     &:active {
       filter: brightness(0.8);
+      transform: scale(1.05);
     }
   }
 

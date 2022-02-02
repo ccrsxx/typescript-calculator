@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Display, Buttons } from './components';
+import { Display, Buttons, Footer } from './components';
 
 interface AppStates {
   formula: [] | string[];
@@ -24,7 +24,7 @@ class App extends Component<{}, AppStates> {
   }
 
   handleClick(input: string) {
-    // clear the display after done calculating and inputting
+    // clear the display after done calculating and inputting something
     if (this.state.doneCalculating) this.clearDisplay();
 
     switch (input) {
@@ -49,9 +49,9 @@ class App extends Component<{}, AppStates> {
   }
 
   handleNumber(number: string) {
-    // do nothing if previous input was a dot and the current input is a dot
+    // do nothing if there's already a decimal point in the current number and the user inputs a decimal point
     // this prevents multiple dots from being added
-    if (this.state.prevInput === '.' && number === '.') return;
+    if (this.state.current.includes('.') && number === '.') return;
 
     // remove everything except dot and numbers
     // this prevent operators from being added after selecting a operator
@@ -115,7 +115,7 @@ class App extends Component<{}, AppStates> {
 
     if (formula) {
       const sanitizedFormula = formula.replace(/[^\d+-/*]/g, '');
-      const result = eval(sanitizedFormula).toString();
+      const result = parseFloat(eval(sanitizedFormula).toFixed(4)).toString();
       this.setState({
         current: result,
         formula: [],
@@ -150,10 +150,15 @@ class App extends Component<{}, AppStates> {
 
     return (
       <div className='App'>
-        <div className='calculator-container'>
-          <Display formula={parsedFormula} current={parsedCurrent} />
+        <main className='calculator-container'>
+          <Display
+            formula={parsedFormula}
+            current={parsedCurrent}
+            doneCalculating={this.state.doneCalculating}
+          />
           <Buttons onClick={this.handleClick} />
-        </div>
+        </main>
+        <Footer />
       </div>
     );
   }

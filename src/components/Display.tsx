@@ -1,13 +1,18 @@
 interface DisplayProps {
   formula: null | string;
   current: string;
+  doneCalculating: boolean;
 }
 
 export const Display = (props: DisplayProps) => (
-  <div className='display-container'>
+  <section className='display-container'>
     <div className='formula'>{props.formula}</div>
-    <div id='display' className='current'>
+    <div
+      id='display'
+      className='current'
+      style={props.doneCalculating ? { color: 'lightgreen' } : {}}
+    >
       {props.current}
     </div>
-  </div>
+  </section>
 );

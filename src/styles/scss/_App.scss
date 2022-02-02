@@ -1,19 +1,36 @@
 body {
-  font: normal 1.6rem;
+  font: normal 1.6rem var(--main-font);
   margin: 0;
-  background-color: var(--background-base);
+  background: var(--background-base);
 }
 
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
 .calculator-container {
+  animation: move-in-from-bottom 1s ease-in-out;
   width: 33rem;
   background: black;
   border-radius: var(--border-radius);
   padding: 0.5rem;
+}
+
+@keyframes move-in-from-bottom {
+  0% {
+    transform: translateY(-90%);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(30%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
