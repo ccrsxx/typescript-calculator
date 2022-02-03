@@ -99,7 +99,9 @@ class App extends Component<{}, AppStates> {
             : this.operator.includes(state.prevInput) // if the previous input is an operator
             ? [...state.formula.slice(-2)].filter((operand) => operand === '-')
                 .length !== 2 && operator === '-' // if there's not two minus signs in a row and operator is a minus
-              ? state.formula + operator // TODO: could add a check to see if there's two minus signs in a row
+              ? state.prevInput === '-' // prevents two minus signs from being added
+                ? state.formula
+                : state.formula + operator
               : state.prevInput === '-' // if the previous input is a minus
               ? state.formula.slice(0, -2) + operator
               : state.formula.slice(0, -1) + operator
@@ -160,6 +162,9 @@ class App extends Component<{}, AppStates> {
 
     // adds a space between each operator in the formula
     parsedFormula = parsedFormula.replace(/([+\-/*])/g, ' $1 ');
+
+    // remove a space between a minus and a number
+    parsedFormula = parsedFormula.replace(/([+-/*])\s\s(-)\s(\d+)/g, '$1 $2$3');
 
     return (
       <div className='App'>
