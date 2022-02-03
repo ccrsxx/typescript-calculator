@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/typescript-calculator/static/css/main.b6efe733.css",
-    "main.js": "/typescript-calculator/static/js/main.8013724f.js",
+    "main.js": "/typescript-calculator/static/js/main.300b04bd.js",
     "index.html": "/typescript-calculator/index.html",
     "main.b6efe733.css.map": "/typescript-calculator/static/css/main.b6efe733.css.map",
-    "main.8013724f.js.map": "/typescript-calculator/static/js/main.8013724f.js.map"
+    "main.300b04bd.js.map": "/typescript-calculator/static/js/main.300b04bd.js.map"
   },
   "entrypoints": [
     "static/css/main.b6efe733.css",
-    "static/js/main.8013724f.js"
+    "static/js/main.300b04bd.js"
   ]
 }
