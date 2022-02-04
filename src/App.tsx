@@ -58,7 +58,7 @@ class App extends Component<{}, AppStates> {
 
     // remove everything except dot and numbers
     // this prevent operators from being added after selecting a operator
-    if (/[^.\d]/.test(this.state.current)) {
+    if (/[^.-\d]/.test(this.state.current)) {
       this.setState((state) => ({
         current: state.current.slice(1)
       }));
@@ -89,7 +89,9 @@ class App extends Component<{}, AppStates> {
   handleOperator(operator: string) {
     this.setState((state) => ({
       formula:
-        state.formula.length !== 0 // if there's at least one number in the formula
+        state.formula === '-' && operator !== '-' // remove minus operator if next is an operator
+          ? ''
+          : state.formula // if there's at least one number in the formula
           ? [...state.formula.slice(-2)].every(
               (operand) => this.operator.includes(operand) // if there are two operators in a row
             )
@@ -97,15 +99,16 @@ class App extends Component<{}, AppStates> {
               ? state.formula
               : state.formula.slice(0, -2) + operator
             : this.operator.includes(state.prevInput) // if the previous input is an operator
-            ? [...state.formula.slice(-2)].filter((operand) => operand === '-')
-                .length !== 2 && operator === '-' // if there's not two minus signs in a row and operator is a minus
+            ? operator === '-' // if there's not two minus signs in a row and operator is a minus
               ? state.prevInput === '-' // prevents two minus signs from being added
                 ? state.formula
                 : state.formula + operator
-              : state.prevInput === '-' // if the previous input is a minus
+              : state.prevInput === '-' // replace operator if there's already an operator
               ? state.formula.slice(0, -2) + operator
               : state.formula.slice(0, -1) + operator
             : state.formula + operator // if there's not minus in a row, normal case
+          : !state.formula && operator === '-' // allow minus before number here
+          ? operator
           : state.formula, // first time operator is pressed
       current: operator,
       prevInput: operator
@@ -163,8 +166,9 @@ class App extends Component<{}, AppStates> {
     // adds a space between each operator in the formula
     parsedFormula = parsedFormula.replace(/([+\-/*])/g, ' $1 ');
 
-    // remove a space between a minus and a number
-    parsedFormula = parsedFormula.replace(/([+-/*])\s\s(-)\s(\d+)/g, '$1 $2$3');
+    // remove a space between a minus and a number in the formula
+    parsedFormula = parsedFormula.replace(/^\s-\s(\d+)/, '-$1');
+    parsedFormula = parsedFormula.replace(/([+-/*])\s{2}-\s(\d+)/g, '$1 -$2');
 
     return (
       <div className='App'>
