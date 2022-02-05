@@ -103,8 +103,6 @@ class App extends Component<{}, AppStates> {
               ? state.prevInput === '-' // prevents two minus signs from being added
                 ? state.formula
                 : state.formula + operator
-              : state.prevInput === '-' // replace operator if there's already an operator
-              ? state.formula.slice(0, -2) + operator
               : state.formula.slice(0, -1) + operator
             : state.formula + operator // if there's not minus in a row, normal case
           : !state.formula && operator === '-' // allow minus before number here
