@@ -4,15 +4,16 @@ interface DisplayProps {
   doneCalculating: boolean;
 }
 
-export const Display = (props: DisplayProps) => (
-  <section className='display-container'>
-    <div className='formula'>{props.formula}</div>
-    <div
-      id='display'
-      className={`current ${props.doneCalculating ? 'bounce' : ''}`}
-      style={props.doneCalculating ? { color: 'lightgreen' } : {}}
-    >
-      {props.current}
-    </div>
-  </section>
-);
+export function Display({ formula, current, doneCalculating }: DisplayProps) {
+  return (
+    <section className='display-container'>
+      <div className='formula'>{formula}</div>
+      <div
+        className={`current ${doneCalculating ? 'bounce' : ''}`}
+        style={doneCalculating ? { color: 'lightgreen' } : {}}
+      >
+        {current}
+      </div>
+    </section>
+  );
+}

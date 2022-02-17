@@ -1,7 +1,7 @@
-@import './scss/root';
+@use './scss/root';
 
 // components
-@import './scss/App';
-@import './scss/Display';
-@import './scss/Buttons';
-@import './scss/Footer';
+@use './scss/App';
+@use './scss/Display';
+@use './scss/Buttons';
+@use './scss/Footer';

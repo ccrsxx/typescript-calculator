@@ -10,27 +10,28 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
+  transition: 300ms ease-out;
 
-.calculator-container {
-  animation: move-in-from-bottom 1s ease-in-out;
-  width: 33rem;
-  background: black;
-  border-radius: var(--border-radius);
-  padding: 0.5rem;
-}
+  .calculator-container {
+    animation: move-in-from-bottom 1s ease-in-out;
+    width: 33rem;
+    background: black;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
 
-@keyframes move-in-from-bottom {
-  0% {
-    transform: translateY(-90%);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translateY(30%);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
+    @keyframes move-in-from-bottom {
+      0% {
+        transform: translateY(-90%);
+        opacity: 0.4;
+      }
+      50% {
+        transform: translateY(30%);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
   }
 }
