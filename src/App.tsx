@@ -9,7 +9,7 @@ export default function App() {
   const [prevInput, setPrevInput] = useState('');
   const [doneCalculating, setDoneCalculating] = useState(false);
 
-  const handleClick = (input: string) => {
+  const handleClick = (input: string) => () => {
     if (doneCalculating) {
       setFormula(current);
       setDoneCalculating(false);

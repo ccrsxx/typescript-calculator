@@ -1,46 +1,40 @@
-.button-container {
-  button {
-    font: 2rem var(--main-font);
-    width: 8rem;
-    height: 7rem;
-    border: 1px solid black;
-    color: white;
-    transition: 150ms;
+button {
+  font: 2rem var(--main-font);
+  border: 1px solid black;
+  color: white;
+  transition: 150ms;
 
-    &:hover {
-      filter: brightness(1.1);
-      border-color: lightgray;
-      color: black;
-      transform: scale(1.01);
-    }
-
-    &:active {
-      filter: brightness(0.8);
-      transform: scale(1.05);
-    }
+  &:hover {
+    filter: brightness(1.1);
+    border-color: lightgray;
+    color: black;
+    transform: scale(1.01);
   }
 
-  .span-two {
-    width: 16rem;
+  &:active {
+    filter: brightness(0.8);
+    transform: scale(1.05);
   }
+}
 
-  .number {
-    background-color: var(--number-color);
-  }
+.number {
+  background-color: var(--number-color);
+}
 
-  .operator {
-    background-color: var(--operator-color);
-  }
+.operator {
+  background-color: var(--operator-color);
+}
 
-  .equals {
-    background-color: var(--equal-color);
-  }
+.equals {
+  grid-column: 3 / -1;
+  background-color: var(--equal-color);
+}
 
-  .clear {
-    background-color: var(--clear-color);
-  }
+.clear {
+  grid-column: 1 / 3;
+  background-color: var(--clear-color);
+}
 
-  .delete {
-    background-color: var(--delete-color);
-  }
+.delete {
+  background-color: var(--delete-color);
 }

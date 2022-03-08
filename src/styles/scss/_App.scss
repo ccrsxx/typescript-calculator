@@ -13,6 +13,9 @@ body {
   transition: 300ms ease-out;
 
   .calculator-container {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: minmax(6rem, auto) repeat(5, 7rem);
     animation: move-in-from-bottom 1s ease-in-out;
     width: 33rem;
     background: black;
